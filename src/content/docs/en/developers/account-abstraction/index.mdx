@@ -1,0 +1,40 @@
+---
+section: developers
+date: Last Modified
+title: "Account Abstraction"
+lang: "en"
+permalink: "account-abstraction/"
+excerpt: "Building on Scroll feels just like Ethereum, and you can bring your favorite tooling and contracts with you."
+whatsnext: { "Developer Quickstart": "/developers/developer-quickstart" }
+---
+
+import Aside from "../../../../components/Aside.astro"
+import ToggleElement from "../../../../components/ToggleElement.astro"
+
+**Account Abstraction**
+
+An account abstraction proposal which completely avoids the need for consensus-layer protocol changes. 
+
+Instead of adding new protocol features and changing the bottom-layer transaction type, this proposal introduces a higher-layer pseudo-transaction object called a UserOperation. 
+
+Users send UserOperation objects into a new separate mempool. 
+
+Bundlers package up a set of these objects into a single transaction by making a call to a special contract, and that transaction then gets included in a block.
+
+[Learn more about ERC4337 →](https://www.erc4337.io)
+
+</Aside>
+
+## What is ERC4337
+
+ERC-4337 (opens in a new tab) (Account Abstraction via Entry Point Contract specification) is a specification that aims to use an entry point contract to achieve account abstraction without changing the consensus layer protocol of Ethereum.
+
+Instead of modifying the logic of the consensus layer itself, ERC-4337 replicates the functionality of the transaction mempool in a higher-level system. 
+
+Users send UserOperation objects that package up the user’s intent along with signatures and other data for verification. 
+
+Either miners or bundlers using services such as Flashbots can package up a set of UserOperation objects into a single “bundle transaction”, which then gets included into an Ethereum block.
+
+## Providers
+
+- (Etherspot)(/etherspot)
